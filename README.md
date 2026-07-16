@@ -2,9 +2,11 @@
 
 Landing profesional para servicios de diseño web orientados a autónomos y pequeños negocios de Oviedo, Asturias y toda España.
 
-## Contenido
+## Archivos
 
-- `index.html`: landing completa.
-- `img/`: imágenes optimizadas utilizadas por la web.
+- `index.html`: estructura de la landing.
+- `styles.css`: estilos y adaptación responsive.
+- `script.js`: interacciones, proyectos y comparador antes/después.
+- `img/`: recursos visuales optimizados.
 
-Proyecto inicial importado desde `Landing_Maria_Navarro_V8.5_final.zip`.
+Versión inicial V8.5.

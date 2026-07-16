@@ -1,0 +1,21 @@
+document.addEventListener('DOMContentLoaded',()=>{
+  const phrases=['Necesito más clientes...','Mi negocio necesita una web profesional...','Quiero destacar frente a mi competencia...','Quiero vender más...'];
+  const typing=document.getElementById('typing-text');let pi=0,ci=phrases[0].length,del=true;
+  function type(){if(!typing)return;const p=phrases[pi];if(del){ci--;typing.textContent=p.slice(0,Math.max(0,ci));if(ci<=0){del=false;pi=(pi+1)%phrases.length;return setTimeout(type,450)}return setTimeout(type,35)}const n=phrases[pi];ci++;typing.textContent=n.slice(0,ci);if(ci>=n.length){del=true;return setTimeout(type,1400)}setTimeout(type,58)}setTimeout(type,1000);
+  const reveals=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');o.unobserve(e.target)}}),{threshold:.12});reveals.forEach(e=>o.observe(e))}else reveals.forEach(e=>e.classList.add('is-visible'));
+  const projects=[
+    {title:'Patricia Lobo · Fisioterapia a domicilio',description:'Landing profesional para presentar sus servicios de fisioterapia a domicilio en Oviedo y facilitar el contacto directo desde cualquier dispositivo.',url:'patricia-lobo-fisioterapia-oviedo.pages.dev',href:'https://patricia-lobo-fisioterapia-oviedo.pages.dev/'},
+    {title:'Isabel Agüera · Maquillaje profesional',description:'Web visual y elegante para mostrar servicios de maquillaje de novia e invitadas a domicilio, con una galería cuidada y contacto sencillo.',url:'isabelaguerajimenez.es',href:'https://isabelaguerajimenez.es/'},
+    {title:'David Agüera Jiménez · Podología a domicilio',description:'Página web profesional para presentar el servicio de podología a domicilio en Oviedo, resolver dudas frecuentes y facilitar la solicitud de cita.',url:'podologiadomiciliooviedo.es',href:'https://podologiadomiciliooviedo.es/'},
+    {title:'Donaciones · Síndrome de Wolfram',description:'Web solidaria creada para explicar la causa, mostrar el objetivo de recaudación y facilitar las distintas formas de colaboración.',url:'donaciones.aswolfram.org',href:'https://donaciones.aswolfram.org/'},
+    {title:'Tu negocio podría estar aquí',description:'Una web creada alrededor de tus objetivos, tu identidad y tus clientes.',url:'tu-negocio.es',href:'https://wa.me/34684630336?text=Hola%20Mar%C3%ADa%2C%20quiero%20hablar%20sobre%20mi%20proyecto%20web'}
+  ];
+  const buttons=[...document.querySelectorAll('#showcase-nav button')],title=document.getElementById('living-title'),desc=document.getElementById('living-description'),url=document.getElementById('living-url'),link=document.getElementById('living-link'),label=document.querySelector('.living-label'),content=document.getElementById('living-content');
+  const palettes=['linear-gradient(135deg,#fff,#edf6f2)','linear-gradient(135deg,#fff8f4,#f1e0e5)','linear-gradient(135deg,#fff,#e7f2ee)','linear-gradient(135deg,#fff,#f5e7eb)','linear-gradient(135deg,#fff7f8,#ffe8ed)'];
+  function activate(i){const p=projects[i];if(!p)return;buttons.forEach((b,j)=>b.classList.toggle('is-active',i===j));if(label)label.textContent='PROYECTO 0'+(i+1);if(title)title.textContent=p.title;if(desc)desc.textContent=p.description;if(url)url.textContent=p.url;if(link)link.href=p.href;if(content)content.style.background=palettes[i]}
+  buttons.forEach(b=>b.addEventListener('click',()=>activate(Number(b.dataset.index))));activate(0);
+  const range=document.getElementById('ba-range'),after=document.getElementById('ba-after'),divider=document.getElementById('ba-divider');
+  function update(){if(!range||!after||!divider)return;const v=Number(range.value);after.style.clipPath=`inset(0 0 0 ${v}%)`;divider.style.left=v+'%'}if(range){range.addEventListener('input',update);update()}
+  const progress=document.querySelector('.reading-progress span');addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;progress.style.width=(m?scrollY/m*100:0)+'%'},{passive:true});
+  const theme=document.querySelector('.theme-toggle');theme?.addEventListener('click',()=>document.body.classList.toggle('dark'));
+});
