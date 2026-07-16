@@ -9,4 +9,4 @@ Landing profesional para servicios de diseño web orientados a autónomos y pequ
 - `script.js`: interacciones, proyectos y comparador antes/después.
 - `img/`: recursos visuales optimizados.
 
-Versión inicial V8.5.
+Versión V8.6 con imagen principal actualizada.
