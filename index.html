@@ -1702,6 +1702,229 @@ body.dark .theme-toggle{
     flex:0 0 38px;
   }
 }
+
+/* ===== V10 FINAL: HEADER, MODO NOCTURNO, PRECIOS Y SERVICIOS ===== */
+
+/* HEADER: menú exactamente centrado en escritorio */
+.header .nav{
+  position:relative;
+  min-height:76px;
+  height:auto;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:24px;
+}
+
+.header .navlinks{
+  grid-column:2;
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  white-space:nowrap;
+  margin:0;
+}
+
+.header .navlinks a{
+  font-size:15px;
+  line-height:1;
+}
+
+.header-actions{
+  grid-column:3;
+  justify-self:end;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.header-actions .theme-toggle{
+  flex:0 0 auto;
+}
+
+.header-actions .btn{
+  flex:0 0 auto;
+}
+
+/* SERVICIOS: las tres imágenes tienen exactamente la misma caja */
+#servicios .cards{
+  align-items:start;
+}
+
+#servicios .card{
+  min-width:0;
+}
+
+#servicios .card img,
+#servicios .service-gallery-image{
+  display:block;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:16 / 10;
+  object-fit:cover!important;
+  object-position:center!important;
+  border-radius:8px;
+}
+
+/* PRECIOS */
+#precios .maintenance-line{
+  font-weight:800;
+  color:#171717;
+}
+
+#precios .pricing-note{
+  display:block;
+  width:100%;
+  max-width:none!important;
+  margin:30px 0 0;
+  line-height:1.55;
+  text-align:left;
+}
+
+/* MODO NOCTURNO: cobertura completa y consistente */
+body.dark,
+body.dark-mode{
+  --bg:#11110f;
+  --surface:#1b1b18;
+  --text:#f4f1eb;
+  --muted:#b5b0a8;
+  --line:#383832;
+  --panel:#181815;
+  background:var(--bg)!important;
+  color:var(--text)!important;
+}
+
+body.dark .header,
+body.dark-mode .header{
+  background:rgba(17,17,15,.94)!important;
+  border-color:var(--line)!important;
+}
+
+body.dark .header a,
+body.dark .theme-toggle,
+body.dark-mode .header a,
+body.dark-mode .theme-toggle{
+  color:var(--text)!important;
+}
+
+body.dark .theme-toggle,
+body.dark-mode .theme-toggle{
+  background:var(--panel)!important;
+  border-color:var(--line)!important;
+}
+
+body.dark section,
+body.dark-mode section,
+body.dark #proyectos,
+body.dark-mode #proyectos,
+body.dark .pink,
+body.dark-mode .pink,
+body.dark .grey,
+body.dark-mode .grey,
+body.dark .cream,
+body.dark-mode .cream,
+body.dark .coral,
+body.dark-mode .coral{
+  background:var(--bg)!important;
+  color:var(--text)!important;
+}
+
+body.dark .card,
+body.dark-mode .card,
+body.dark .price-card,
+body.dark-mode .price-card,
+body.dark .testimonial,
+body.dark-mode .testimonial,
+body.dark .project,
+body.dark-mode .project{
+  background:var(--panel)!important;
+  color:var(--text)!important;
+  border-color:var(--line)!important;
+}
+
+body.dark p,
+body.dark li,
+body.dark small,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode small{
+  color:var(--muted);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark strong,
+body.dark b,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode strong,
+body.dark-mode b{
+  color:var(--text);
+}
+
+body.dark #precios .maintenance-line,
+body.dark-mode #precios .maintenance-line{
+  color:var(--text)!important;
+}
+
+/* MÓVIL: menú visible y centrado */
+@media(max-width:800px){
+  .header .nav{
+    min-height:120px;
+    padding-top:12px;
+    padding-bottom:12px;
+    grid-template-columns:1fr;
+    justify-items:center;
+    gap:12px;
+  }
+
+  .header .navlinks{
+    position:static!important;
+    transform:none!important;
+    grid-column:1;
+    grid-row:1;
+    display:flex!important;
+    width:100%;
+    justify-content:center;
+    gap:20px;
+    margin:0;
+    font-size:13px;
+  }
+
+  .header-actions{
+    grid-column:1;
+    grid-row:2;
+    justify-self:center;
+    justify-content:center;
+    gap:12px;
+  }
+
+  .header-actions .theme-toggle{
+    width:42px;
+    height:42px;
+  }
+
+  .header-actions .btn{
+    min-height:44px;
+    padding:11px 22px;
+  }
+
+  #servicios .card img,
+  #servicios .service-gallery-image{
+    aspect-ratio:16 / 10;
+  }
+
+  #precios .pricing-note{
+    width:100%;
+    max-width:none!important;
+    text-align:left;
+  }
+}
 </style>
 <link as="image" fetchpriority="high" href="img/hero-espacio-trabajo.webp" rel="preload"/>
 <script type="application/ld+json">
@@ -1726,9 +1949,9 @@ body.dark .theme-toggle{
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
 -->
 </head><body id="top"><div aria-hidden="true" class="reading-progress"><span></span></div><div aria-hidden="true" class="custom-cursor"><span></span></div>
-<header class="header"><div class="wrap nav"><nav class="navlinks"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a><button aria-label="Cambiar modo claro u oscuro" class="theme-toggle" title="Cambiar modo" type="button">
+<header class="header"><div class="wrap nav"><nav class="navlinks"><a href="#servicios">Servicios</a><a href="#precios">Precios</a><a href="#contacto">Contacto</a></nav><div class="header-actions"><button aria-label="Cambiar modo claro u oscuro" class="theme-toggle" title="Cambiar modo" type="button">
 <span class="theme-icon">☾</span>
-</button></nav><a class="btn" href="https://wa.me/34684630336?text=Hola%20Mar%C3%ADa%2C%20quiero%20informaci%C3%B3n%20para%20crear%20o%20mejorar%20mi%20web." target="_blank">Hablemos</a></div></header>
+</button><a class="btn" href="https://wa.me/34684630336?text=Hola%20Mar%C3%ADa%2C%20quiero%20informaci%C3%B3n%20para%20crear%20o%20mejorar%20mi%20web." target="_blank">Hablemos</a></div></div></header>
 <main>
 <section class="hero hero-commercial">
 <div class="wrap">
@@ -1883,7 +2106,7 @@ body.dark .theme-toggle{
 <li>Textos, diseño y adaptación a móvil incluidos</li>
 <li>Botón de contacto directo por WhatsApp</li>
 <li>Dominio incluido el primer año</li>
-</ul>
+<li class="maintenance-line">Mantenimiento opcional: 35 €/mes</li></ul>
 <a class="btn" href="https://wa.me/34684630336?text=Hola%20Mar%C3%ADa%2C%20quiero%20una%20landing%20page%20para%20mi%20negocio" rel="noopener" target="_blank">Quiero mi landing</a>
 </article>
 <article class="price-card">
@@ -1894,11 +2117,11 @@ body.dark .theme-toggle{
 <li>Diseño a medida de tu identidad</li>
 <li>Optimización SEO local incluida</li>
 <li>Formación para que puedas actualizarla</li>
-</ul>
+<li class="maintenance-line">Mantenimiento opcional: 35 €/mes</li></ul>
 <a class="btn light" href="https://wa.me/34684630336?text=Hola%20Mar%C3%ADa%2C%20me%20interesa%20una%20web%20corporativa" rel="noopener" target="_blank">Pedir presupuesto</a>
 </article>
 </div>
-<p class="pricing-note">Todos los proyectos incluyen soporte durante el primer mes. Si prefieres despreocuparte, ofrezco mantenimiento mensual desde 40 €/mes: actualizaciones, copias de seguridad y pequeños cambios.</p>
+<p class="pricing-note">Todos los proyectos incluyen soporte durante el primer mes. Si prefieres despreocuparte, ofrezco mantenimiento mensual desde 35 €/mes: actualizaciones, copias de seguridad y pequeños cambios.</p>
 </div>
 </section>
 </main><section class="final-premium-cta" id="contacto">
@@ -2138,32 +2361,42 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 (() => {
   const button = document.querySelector('.theme-toggle');
-  const icon = document.querySelector('.theme-icon');
+  const icon = button?.querySelector('.theme-icon');
+
   if (!button || !icon) return;
 
-  const saved = localStorage.getItem('maria-theme');
-  const prefersDark = window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  const applyTheme = (dark) => {
-    document.body.classList.toggle('dark', dark);
-    icon.textContent = dark ? '☀' : '☾';
+  const applyTheme = (isDark) => {
+    document.body.classList.toggle('dark', isDark);
+    document.body.classList.toggle('dark-mode', isDark);
+    icon.textContent = isDark ? '☀' : '☾';
     button.setAttribute(
       'aria-label',
-      dark ? 'Activar modo claro' : 'Activar modo oscuro'
+      isDark ? 'Activar modo claro' : 'Activar modo oscuro'
     );
     button.setAttribute(
       'title',
-      dark ? 'Activar modo claro' : 'Activar modo oscuro'
+      isDark ? 'Activar modo claro' : 'Activar modo oscuro'
     );
   };
 
-  applyTheme(saved ? saved === 'dark' : prefersDark);
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem('maria-theme');
+  } catch (error) {}
+
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  applyTheme(savedTheme ? savedTheme === 'dark' : prefersDark);
 
   button.addEventListener('click', () => {
-    const dark = !document.body.classList.contains('dark');
-    applyTheme(dark);
-    localStorage.setItem('maria-theme', dark ? 'dark' : 'light');
+    const isDark = !document.body.classList.contains('dark-mode');
+    applyTheme(isDark);
+
+    try {
+      localStorage.setItem('maria-theme', isDark ? 'dark' : 'light');
+    } catch (error) {}
   });
 })();
 </script></body></html>
